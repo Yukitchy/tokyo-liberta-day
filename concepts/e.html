@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E · Three questions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fffdf6;--card:#fff;--ink:#111;--mute:#767065;--line:#eae4d6;--acc:#1a5c3a}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,-apple-system,sans-serif;color:var(--ink);background:var(--bg);min-height:100vh;display:flex;flex-direction:column}
+.wrap{padding:20px 18px;flex:1;display:flex;flex-direction:column}
+.kicker{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin:0 0 4px}
+h1{font-weight:800;font-size:20px;letter-spacing:-.02em;margin:0 0 18px}
+.q{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:12px}
+.q>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;padding:18px 16px;font-weight:700;font-size:16px}
+.q>summary::-webkit-details-marker{display:none}
+.q .ic{font-size:20px}
+.q>summary::after{content:"+";margin-left:auto;font-size:20px;color:var(--mute);font-weight:400}
+.q[open]>summary::after{content:"–"}
+.q[open]>summary{border-bottom:1px solid var(--line)}
+.qbody{padding:14px 16px 16px;font-size:14px;color:var(--mute)}
+.qbody b{color:var(--ink)}
+.qbody .steps{list-style:none;margin:8px 0 0;padding:0}
+.qbody .steps li{padding:6px 0;border-top:1px solid var(--line);font-size:13.5px}
+.qbody .steps li:first-child{border-top:none}
+</style></head><body>
+<div class="wrap">
+<p class="kicker">Tokyo · Friday, September 11</p>
+<h1>Brian &amp; Dashiell</h1>
+
+<details class="q"><summary><span class="ic">📍</span>Where do I meet you?</summary>
+<div class="qbody">Tokyo Station, <b>10:42</b>. I'll be waiting on the platform, right at the door closest to your seats (car 13, 1D/1E). Yuuki Ichihara, <b>+81 (0)90-4494-1989</b> — WhatsApp works too. Day ends 16:30 at Sunshine City Prince Hotel, where I'll help with check-in.</div></details>
+
+<details class="q"><summary><span class="ic">💴</span>What do I pay?</summary>
+<div class="qbody"><b>¥65,780</b> (tax included), for the FLAT LABO print work — paid on site by credit card via a payment link. Lunch, dinner and local transport are on your own. Everything else today is already arranged.</div></details>
+
+<details class="q"><summary><span class="ic">🗺️</span>What are we doing?</summary>
+<div class="qbody">
+<ol class="steps">
+<li><b>11:30</b> FLAT LABO, Ginza — print showroom &amp; live demo, about an hour</li>
+<li><b>Midday</b> Lunch — one of 5 picks, decided on the day</li>
+<li><b>Afternoon</b> Kappabashi — kitchenware street</li>
+<li><b>Late aft.</b> Yanesen — old backstreets, Yanaka Ginza</li>
+<li><b>16:30</b> Sunshine City Prince Hotel — check-in, day ends</li>
+</ol>
+</div></details>
+
+</div>
+</body></html>

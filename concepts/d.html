@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>D · Boarding pass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fffdf6;--card:#fff;--ink:#111;--mute:#767065;--line:#eae4d6;--acc:#1a5c3a}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,-apple-system,sans-serif;color:var(--ink);background:var(--bg);display:flex;justify-content:center;padding:16px}
+.pass{width:100%;max-width:358px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.head{background:var(--acc);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.head b{font-size:13px;font-weight:700;letter-spacing:.04em}
+.head span{font-size:11px;opacity:.85}
+.body{padding:18px}
+.route{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.pt{flex:1}
+.pt .city{font-size:20px;font-weight:800;letter-spacing:-.02em}
+.pt .sub{font-size:11px;color:var(--mute)}
+.arrow{color:var(--acc);font-size:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 10px;margin-bottom:16px}
+.f .label{display:block;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:3px}
+.f .val{display:block;font-size:15px;font-weight:700}
+.perf{border-top:2px dashed var(--line);position:relative;margin:0 -18px}
+.perf:before,.perf:after{content:"";position:absolute;top:-9px;width:18px;height:18px;border-radius:50%;background:var(--bg)}
+.perf:before{left:-9px}.perf:after{right:-9px}
+.stub{padding:16px 18px 18px;display:flex;justify-content:space-between;align-items:center}
+.stub .amt{font-size:24px;font-weight:800;color:var(--acc);letter-spacing:-.02em}
+.stub .amtlabel{font-size:10.5px;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+.barcode{display:flex;gap:2px;align-items:flex-end;height:32px}
+.barcode i{display:block;width:2px;background:var(--ink);opacity:.75}
+.callrow{margin:0 18px 18px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13px;font-weight:600;text-align:center}
+.ss{text-align:center;font-size:11px;color:var(--mute);margin-top:12px}
+</style></head><body>
+<div class="pass">
+<div class="head"><b>TOUR BOARDING PASS</b><span>FRI SEP 11</span></div>
+<div class="body">
+<div class="route">
+<div class="pt"><div class="city">SHZ</div><div class="sub">Shizuoka · 9:41</div></div>
+<div class="arrow">✈</div>
+<div class="pt" style="text-align:right"><div class="city">TYO</div><div class="sub">Tokyo Sta. · 10:42</div></div>
+</div>
+<div class="grid">
+<div class="f"><span class="label">Passenger</span><span class="val">Brian &amp; Dashiell</span></div>
+<div class="f"><span class="label">Seats</span><span class="val">Car 13 · 1D / 1E</span></div>
+<div class="f"><span class="label">Meet at</span><span class="val">Platform, 10:42</span></div>
+<div class="f"><span class="label">Ends at</span><span class="val">Hotel, 16:30</span></div>
+</div>
+</div>
+<div class="perf"></div>
+<div class="stub">
+<div><span class="amtlabel">Due today</span><br><span class="amt">¥65,780</span></div>
+<div class="barcode"><i style="height:32px"></i><i style="height:20px"></i><i style="height:28px"></i><i style="height:14px"></i><i style="height:32px"></i><i style="height:22px"></i><i style="height:30px"></i><i style="height:18px"></i><i style="height:26px"></i><i style="height:32px"></i></div>
+</div>
+<div class="callrow">☎ Yuuki Ichihara — +81 (0)90-4494-1989</div>
+</div>
+<p class="ss">Screenshot this — works with no signal.</p>
+</body></html>

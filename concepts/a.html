@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A · One card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fffdf6;--card:#fff;--ink:#111;--mute:#767065;--line:#eae4d6;--acc:#1a5c3a}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,-apple-system,sans-serif;color:var(--ink);background:var(--bg);line-height:1.4}
+.wrap{padding:18px 18px 20px;display:flex;flex-direction:column}
+.kicker{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin:0 0 4px}
+h1{font-weight:800;font-size:22px;letter-spacing:-.02em;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.stat .label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.stat .val{display:block;font-size:16px;font-weight:700;line-height:1.3}
+.stat .sub{display:block;font-size:12.5px;font-weight:500;color:var(--mute);margin-top:2px}
+.phone{display:flex;align-items:center;gap:10px;background:var(--acc);color:#fff;text-decoration:none;border-radius:10px;padding:13px 14px;font-weight:700;font-size:14.5px;margin-bottom:14px}
+.phone span.ic{font-size:17px}
+.fold{border:1px solid var(--line);border-radius:10px;background:var(--card);margin-top:6px}
+.fold summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;padding:13px 14px;font-weight:700;font-size:14px}
+.fold summary::-webkit-details-marker{display:none}
+.fold summary::after{content:"View full day plan ▾";font-weight:600;font-size:13px;color:var(--acc)}
+.fold[open] summary::after{content:"Hide ▴"}
+.fold-body{padding:0 14px 14px}
+.steps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.steps li{display:grid;grid-template-columns:66px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.steps b{font-size:12.5px;color:var(--acc);font-weight:700}
+.steps strong{display:block;font-size:14px;font-weight:600}
+.steps span{display:block;font-size:12.5px;color:var(--mute)}
+.foot{font-size:11px;color:var(--mute);margin-top:10px;text-align:center}
+</style></head><body>
+<div class="wrap">
+<p class="kicker">Tokyo · Friday, September 11</p>
+<h1>Brian &amp; Dashiell</h1>
+<div class="grid">
+<div class="stat"><span class="label">Meet</span><span class="val">Tokyo Station</span><span class="sub">10:42 · I'll be on the platform</span></div>
+<div class="stat"><span class="label">Pay today</span><span class="val">¥65,780</span><span class="sub">credit card, on site</span></div>
+</div>
+<a class="phone" href="tel:+819044941989"><span class="ic">☎</span> Yuuki Ichihara — +81 (0)90-4494-1989</a>
+<details class="fold">
+<summary></summary>
+<div class="fold-body">
+<ol class="steps">
+<li><b>9:41</b><div><strong>Depart Shizuoka</strong><span>Hikari 640, car 13, seats 1D/1E</span></div></li>
+<li><b>10:42</b><div><strong>Arrive Tokyo Station</strong><span>Meet on the platform</span></div></li>
+<li><b>11:30</b><div><strong>FLAT LABO, Ginza</strong><span>Print workshop, about an hour</span></div></li>
+<li><b>Midday</b><div><strong>Lunch</strong><span>One of 5 picks, decided on the day</span></div></li>
+<li><b>Afternoon</b><div><strong>Kappabashi</strong><span>Kitchenware street</span></div></li>
+<li><b>Late aft.</b><div><strong>Yanesen</strong><span>Old backstreets</span></div></li>
+<li><b>16:30</b><div><strong>Sunshine City Prince Hotel</strong><span>Check-in help, day ends</span></div></li>
+</ol>
+</div>
+</details>
+<p class="foot">Full itinerary, lunch picks and notes are one tap away — closed by default.</p>
+</div>
+</body></html>

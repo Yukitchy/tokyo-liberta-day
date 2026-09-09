@@ -1,0 +1,79 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ツアー日程ページ 5案比較 — Brian &amp; Dashiell 9/11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fffdf6;--card:#fff;--ink:#111;--mute:#767065;--line:#eae4d6;--acc:#1a5c3a}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Zen Kaku Gothic New","Hiragino Sans",Inter,sans-serif;font-weight:500;color:var(--ink);background:var(--bg);line-height:1.7}
+.wrap{max-width:1400px;margin:0 auto;padding:28px 24px 80px}
+.kicker{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin:0 0 8px}
+h1{font-size:26px;font-weight:900;letter-spacing:-.02em;margin:0 0 14px}
+.problem{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;font-size:14.5px;margin-bottom:30px;max-width:820px}
+.problem b{color:var(--acc)}
+.grid{display:grid;grid-template-columns:repeat(5,minmax(300px,1fr));gap:18px;overflow-x:auto;padding-bottom:10px}
+.cell{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.cellhead{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.badge{width:34px;height:34px;border-radius:9px;background:var(--acc);color:#fff;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;flex:none}
+.cellhead b{font-size:14.5px;font-weight:900;display:block}
+.cellhead span{font-size:11.5px;color:var(--mute)}
+.frame-box{background:#1b1d22;padding:14px 0;display:flex;justify-content:center;overflow-x:auto}
+.frame-box iframe{width:390px;height:800px;flex:0 0 390px;border:0;border-radius:0;background:#fffdf6;max-width:none}
+.notes{padding:14px 16px 16px;font-size:12.5px}
+.notes p{margin:0 0 7px}
+.notes b{font-weight:800}
+.notes .weak b{color:#a8331f}
+.h-h{font-size:15px;font-weight:900;margin:0 0 12px}
+@media(max-width:1300px){.grid{grid-template-columns:repeat(5,300px)}}
+</style></head><body>
+<div class="wrap">
+<p class="kicker">ツアー日程ページ・構造案の比較</p>
+<h1>「開いて数秒で、明日どこへ何時に行けばいいか分かる」5案</h1>
+<div class="problem">
+今のページ（<a href="https://yukitchy.github.io/tokyo-liberta-day/" target="_blank">公開版</a>）は390px幅で <b>4441px</b>。すでに日本に来て移動中・観光中のBrianとDashiellが、じっくり読む前提になってしまっている。<br>
+5案とも同じ実データ（9/11・東京駅10:42合流・当日払い¥65,780・ガイド090-4494-1989）で動く試作。配色・フォントは現行ページのトークンで統一し、比べるのは<b>構造だけ</b>。
+</div>
+<div class="grid">
+
+<div class="cell"><div class="cellhead"><div class="badge">A</div><div><b>One card</b><span>1枚に収める・他は折りたたみ</span></div></div>
+<div class="frame-box"><iframe src="a.html" title="A"></iframe></div>
+<div class="notes">
+<p><b>狙い：</b>迷わせない。合流地点・時刻・当日払う額・電話番号の4つだけを開いた瞬間に見せる。</p>
+<p><b>向いている場面：</b>信号弱い駅・改札前で「今すぐ確認したい」時。</p>
+<p class="weak"><b>弱点：</b>情報を削りすぎると「本当にこれで全部？」と不安にさせる。行程を見たい時は必ず1タップ挟む。</p>
+</div></div>
+
+<div class="cell"><div class="cellhead"><div class="badge">B</div><div><b>Timeline rail</b><span>横スワイプの行程カード</span></div></div>
+<div class="frame-box"><iframe src="b.html" title="B"></iframe></div>
+<div class="notes">
+<p><b>狙い：</b>1ステップ=1画面。今どこにいるかを指でめくって追える。</p>
+<p><b>向いている場面：</b>移動中に「次どこ行くんだっけ」を1枚だけ確認したい時。</p>
+<p class="weak"><b>弱点：</b>全体像が一望できない。7枚を全部見たか把握しづらく、スクロール（横）の存在に気づかない人がいる。</p>
+</div></div>
+
+<div class="cell"><div class="cellhead"><div class="badge">C</div><div><b>Chat</b><span>吹き出しで上から流す</span></div></div>
+<div class="frame-box"><iframe src="c.html" title="C"></iframe></div>
+<div class="notes">
+<p><b>狙い：</b>旅行者が一番使い慣れているUI。ガイドから届いたメッセージとして読める。</p>
+<p><b>向いている場面：</b>「担当者から連絡が来ている」安心感を出したい時。</p>
+<p class="weak"><b>弱点：</b>結局は縦スクロールが発生する（今回は約10往復分）。会話文で情報密度が薄まり、事実だけ拾うには一番遅い。</p>
+</div></div>
+
+<div class="cell"><div class="cellhead"><div class="badge">D</div><div><b>Boarding pass</b><span>スクショ保存前提の半券</span></div></div>
+<div class="frame-box"><iframe src="d.html" title="D"></iframe></div>
+<div class="notes">
+<p><b>狙い：</b>圏外・オフラインでも見られるよう、1枚の画像として完結させる。</p>
+<p><b>向いている場面：</b>海外SIMが不安定な人・機内モードで移動する区間。</p>
+<p class="weak"><b>弱点：</b>行程の詳細（ランチ候補・かっぱ橋/谷根千の説明）が完全に無い。搭乗券の体裁に合わない情報は捨てるしかない。</p>
+</div></div>
+
+<div class="cell"><div class="cellhead"><div class="badge">E</div><div><b>Three questions</b><span>大ボタン3つ・押した分だけ開く</span></div></div>
+<div class="frame-box"><iframe src="e.html" title="E"></iframe></div>
+<div class="notes">
+<p><b>狙い：</b>読ませずに選ばせる。自分が今知りたい1つだけを開く。</p>
+<p><b>向いている場面：</b>同じページを合流前・支払い前・観光中と何度も開き直す使い方。</p>
+<p class="weak"><b>弱点：</b>3分類に収まらない情報（ガイドの電話番号は「どこで会う？」の中に埋もれる等）の置き場所に迷う。初見だと3つのうちどれか分からず全部開く人もいる。</p>
+</div></div>
+
+</div>
+</div>
+</body></html>

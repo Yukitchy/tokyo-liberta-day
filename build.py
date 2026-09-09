@@ -30,6 +30,10 @@ DAY = dict(
          'A showroom for museum-quality digital art printing: the craftsmanship and technology behind fine art prints, '
          'plus a live printing demonstration up close. 2-16-7 Ginza, Shochiku Building, Chuo-ku &middot; 03-6264-7718. '
          'About an hour, with me interpreting.'),
+        ('Optional', 'Frames at K.Itoya',
+         'If you want to see frames for the print before lunch, K.Itoya&rsquo;s frame corner is a 6-minute walk from FLAT '
+         'LABO &mdash; about 1,500 frame samples and 500 mat samples, B1 floor. '
+         f'<a href="{gm("Ito-ya K.Itoya Ginza 2-7-15")}" target="_blank" rel="noopener">Google Maps ↗</a>'),
         ('Midday', 'Lunch',
          'One of the five picks below, decided on the day.'),
         ('Afternoon', 'Kappabashi Kitchenware Street',
@@ -193,7 +197,7 @@ header p{{font-size:18px;color:var(--mute);margin:0;max-width:620px}}
 .photos img{{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;background:#f0ebe0}}
 .steps{{list-style:none;padding:0;margin:0 0 30px;border-top:1px solid var(--line);max-width:720px}}
 .steps li{{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}}
-.steps b{{font-variant-numeric:tabular-nums;color:var(--acc);font-weight:600;font-size:14px}} .steps strong{{display:block;font-weight:600;font-size:17px;margin-bottom:2px}} .steps span{{color:var(--mute);font-size:14px}}
+.steps b{{font-variant-numeric:tabular-nums;color:var(--acc);font-weight:600;font-size:14px}} .steps strong{{display:block;font-weight:600;font-size:17px;margin-bottom:2px}} .steps span{{color:var(--mute);font-size:14px}} .steps a{{color:var(--ink);text-decoration:underline;text-underline-offset:3px}}
 .mapbox{{border-radius:8px;overflow:hidden;background:#f0ebe0;max-width:720px}} .mapbox iframe{{display:block;width:100%;height:340px;border:0}}
 .moves{{font-size:14px;color:var(--mute);margin:14px 0 0;max-width:720px}} .moves a{{color:var(--ink);text-decoration:underline;text-underline-offset:3px}}
 .eats{{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:26px}}
