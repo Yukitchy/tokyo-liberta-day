@@ -81,13 +81,19 @@ EXTRA = dict(
  dashiell=("For Dashiell: <i>To Your Eternity</i>, <i>Ruri Rocks</i>, <i>The Girl From the Other Side</i> and "
            "<i>Frieren</i> share a certain feel &mdash; quiet, strange, beautifully drawn, more about the world than the fight. "
            "Akihabara has secondhand shops trading in old manga, art books and cel art, worth a look for series like these. "
-           "Popular shows often get a collaboration cafe or pop-up somewhere in the neighborhood that month &mdash; we&rsquo;d "
-           "check what&rsquo;s running when the day comes. And since <i>Ruri Rocks</i> is about minerals, there are also small "
-           "shops around Tokyo that sell mineral and fossil specimens, worth a stop if that appeals."),
- photos=[('img/akiba-street.jpg', 'Standing in the middle of Akihabara on a tour day'),
-         ('img/akiba-cafe.jpg', 'A maid cafe drink being poured at the table'),
-         ('img/akiba-secondhand-shelf.jpg', 'Hunting through a shelf of secondhand boxes')],
+           "And since <i>Ruri Rocks</i> is about minerals, Tokyo Science, a fossil and mineral specimen shop on the 1st floor "
+           "of Kinokuniya&rsquo;s Shinjuku main store &mdash; ammonites, trilobites, mineral clusters, open daily &mdash; is "
+           "worth a stop if that appeals."),
+ photos=[('img/akiba-figure-hunt.jpg', 'A teenager picking out a figure from a secondhand shop shelf'),
+         ('img/akiba-street-friends.jpg', 'Three friends laughing together on an Akihabara street'),
+         ('img/akiba-tote.jpg', 'A guest showing off a tote bag she just bought'),
+         ('img/akiba-cheers.jpg', 'Two guests raising a toast at a table'),
+         ('img/akiba-cafe.jpg', 'A maid cafe drink being poured at the table')],
  ig='https://www.instagram.com/yukianimesensei/',
+ ig_handle='@yukianimesensei', ig_name='Yuuki_AnimeSensei_JAPANTourguide',
+ ig_posts='934 posts', ig_followers='7,188 followers',
+ ig_bio='Akihabara anime tour guide | 2,000+ guests',
+ ig_grid=[f'img/ig/{n:02d}.jpg' for n in range(1, 10)],
 )
 
 def photos_block(items):
@@ -204,6 +210,17 @@ header p{{font-size:18px;color:var(--mute);margin:0;max-width:620px}}
 .costs b{{font-weight:600;font-size:15px}} .costs strong{{font-weight:700;font-size:15px;color:var(--acc);text-align:right;white-space:nowrap}}
 .costs span{{grid-column:1/-1;color:var(--mute);font-size:13.5px}}
 .links{{margin:0 0 30px;font-size:14px;display:flex;flex-wrap:wrap;gap:6px 18px}} .links a{{color:var(--ink);text-decoration:underline;text-underline-offset:3px}}
+.iginvite{{margin:0 0 10px;font-size:14px;color:var(--mute)}}
+.igcard{{display:block;max-width:420px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;text-decoration:none;color:inherit;margin:0 0 30px;transition:border-color .15s ease}}
+.igcard:hover{{border-color:var(--ink)}}
+.ighead{{display:flex;align-items:center;gap:12px;margin-bottom:14px}}
+.igavatar{{width:48px;height:48px;border-radius:50%;background:var(--bg);border:1px solid var(--line);flex:none;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--acc);font-size:17px}}
+.ighandle{{display:block;font-weight:700;font-size:15px}}
+.igname{{display:block;font-size:12.5px;color:var(--mute)}}
+.igstats{{display:flex;gap:14px;font-size:13px;color:var(--mute);margin-bottom:8px}} .igstats b{{color:var(--ink)}}
+.igbio{{font-size:13.5px;color:var(--mute);margin:0 0 14px}}
+.iggrid{{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}}
+.iggrid img{{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:3px;background:#f0ebe0}}
 footer.wrap{{padding:26px 20px 60px;font-size:13px;color:var(--mute);border-top:1px solid var(--line)}} footer p{{margin:0 0 6px}}
 .cred summary{{cursor:pointer;font-size:12px;color:var(--mute);opacity:.75;list-style:none;display:inline-block;text-decoration:underline;text-underline-offset:3px}}
 .cred summary::-webkit-details-marker{{display:none}} .cred p{{margin:8px 0 0;font-size:11.5px;line-height:1.6;opacity:.8}}
@@ -273,7 +290,13 @@ footer.wrap{{padding:26px 20px 60px;font-size:13px;color:var(--mute);border-top:
 <ul style="margin:0 0 16px 20px;padding:0;font-size:15px;color:var(--mute)">{''.join(f'<li style="margin-bottom:6px">{x}</li>' for x in EXTRA['items'])}</ul>
 <p>{EXTRA['dashiell']}</p>
 <div class="photos">{''.join(f'<img src="{src}" alt="{html.escape(alt)}" loading="lazy">' for src, alt in EXTRA['photos'])}</div>
-<p class="links"><a href="{EXTRA['ig']}" target="_blank" rel="noopener">See recent tours on Instagram ↗</a></p>
+<p class="iginvite">More of these days on Instagram.</p>
+<a class="igcard" href="{EXTRA['ig']}" target="_blank" rel="noopener">
+<div class="ighead"><div class="igavatar">Y</div><div><span class="ighandle">{EXTRA['ig_handle']}</span><span class="igname">{html.escape(EXTRA['ig_name'])}</span></div></div>
+<div class="igstats"><span><b>{EXTRA['ig_posts']}</b></span><span><b>{EXTRA['ig_followers']}</b></span></div>
+<p class="igbio">{html.escape(EXTRA['ig_bio'])}</p>
+<div class="iggrid">{''.join(f'<img src="{src}" alt="Tour guest photo {i+1} from an Akihabara anime tour" loading="lazy">' for i, src in enumerate(EXTRA['ig_grid']))}</div>
+</a>
 <p>Interested, or just curious? Yuuki Ichihara, +81 (0)90-4494-1989, WhatsApp works too &mdash; same guide, same number as Friday.</p>
 </div></details>
 </div>
