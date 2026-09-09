@@ -210,10 +210,10 @@ def stamp(step=1):
 def gmsg(body='', img=None, id_=None, card=False, extra=''):
     idattr = f' id="{id_}"' if id_ else ''
     att = f'<img class="att" src="{img[0]}" alt="{html.escape(img[1])}" loading="lazy">' if img else ''
-    return f'<div class="row"{idattr}><div class="bub{" card" if card else ""}">{body}{att}{extra}<span class="tm">{stamp()}</span></div></div>'
+    return f'<div class="row"{idattr}><div class="bub{" card" if card else ""}">{body}{att}{extra}</div></div>'
 
 def umsg(body):
-    return f'<div class="row me"><div class="bub">{body}<span class="tm">{stamp()}</span></div></div>'
+    return f'<div class="row me"><div class="bub">{body}</div></div>'
 
 def step_body(t, h, d):
     return f'<span class="mt">{t}</span><h4>{h}</h4>{d}'
@@ -224,7 +224,7 @@ S = DAY['steps']  # 0 depart, 1 arrive Tokyo, 2 FLAT LABO, 3 K.Itoya, 4 lunch, 5
 H, T = PH['hero'], PH['steps']  # hero: Tokyo/Ginza/Kappabashi/Yanaka Ginza; steps: Mokuhankan/plastic food/Sunshine walkway
 
 thread = ''.join([
-    gmsg('Morning! Quick recap for today so you have it in one place.'),
+    gmsg('A quick recap of Friday, so you have it in one place.'),
     gmsg(DAY['lead'], extra=(
         f'<ul class="facts"><li><b>Guide</b> {DAY["guide"]}</li><li><b>Time</b> {DAY["time"]}</li>'
         f'<li><b>Group</b> {DAY["group"]}</li><li><b>Start and end</b> {DAY["route"]}</li></ul>')),
