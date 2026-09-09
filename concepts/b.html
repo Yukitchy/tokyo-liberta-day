@@ -13,11 +13,13 @@ h1{font-weight:800;font-size:20px;letter-spacing:-.02em;margin:0 0 12px}
 .chip b{color:var(--acc)}
 .rail{display:flex;gap:12px;overflow-x:auto;padding:14px 18px 8px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
 .rail::-webkit-scrollbar{display:none}
-.card{flex:0 0 82%;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;min-height:230px;display:flex;flex-direction:column}
-.card b.time{font-size:12px;font-weight:700;color:var(--acc);letter-spacing:.06em;text-transform:uppercase}
-.card h2{font-size:18px;font-weight:700;margin:8px 0 8px;letter-spacing:-.01em}
-.card p{font-size:13.5px;color:var(--mute);margin:0;flex:1}
-.card .n{margin-top:10px;font-size:11px;color:var(--mute);opacity:.7}
+.card{flex:0 0 82%;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-height:230px;display:flex;flex-direction:column}
+.card img{width:100%;height:120px;object-fit:cover;display:block}
+.card .cbody{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
+.card .cbody b.time{font-size:12px;font-weight:700;color:var(--acc);letter-spacing:.06em;text-transform:uppercase}
+.card .cbody h2{font-size:18px;font-weight:700;margin:8px 0 8px;letter-spacing:-.01em}
+.card .cbody p{font-size:13.5px;color:var(--mute);margin:0;flex:1}
+.card .cbody .n{margin-top:10px;font-size:11px;color:var(--mute);opacity:.7}
 .dots{display:flex;gap:6px;justify-content:center;padding:6px 0 16px}
 .dots span{width:6px;height:6px;border-radius:50%;background:var(--line)}
 .hint{text-align:center;font-size:11.5px;color:var(--mute);padding-bottom:14px}
@@ -32,13 +34,13 @@ h1{font-weight:800;font-size:20px;letter-spacing:-.02em;margin:0 0 12px}
 </div>
 </div>
 <div class="rail">
-<div class="card"><b class="time">9:41 · Step 1 of 7</b><h2>Depart Shizuoka</h2><p>Hikari 640, ordinary car 13, seats 1D and 1E. About an hour to Tokyo.</p></div>
-<div class="card"><b class="time">10:42 · Step 2 of 7</b><h2>Arrive Tokyo Station</h2><p>I'll be waiting on the platform, right at the door closest to your seats. Yuuki Ichihara, +81 (0)90-4494-1989.</p></div>
-<div class="card"><b class="time">11:30 · Step 3 of 7</b><h2>FLAT LABO, Ginza</h2><p>Museum-quality print showroom and live demo. 2-16-7 Ginza, Shochiku Bldg · 03-6264-7718. About an hour.</p></div>
-<div class="card"><b class="time">Midday · Step 4 of 7</b><h2>Lunch</h2><p>One of five picks nearby, decided on the day.</p></div>
-<div class="card"><b class="time">Afternoon · Step 5 of 7</b><h2>Kappabashi</h2><p>Kitchenware street — knives, ceramics, and the realistic food replicas restaurants use.</p></div>
-<div class="card"><b class="time">Late aft. · Step 6 of 7</b><h2>Yanesen</h2><p>Yanaka, Nezu, Sendagi — old wooden lanes and Yanaka Ginza's street food.</p></div>
-<div class="card"><b class="time">16:30 · Step 7 of 7</b><h2>Sunshine City Prince Hotel</h2><p>Check-in help, then the guided day ends. Your suitcase is already there.</p><p class="n">— end —</p></div>
+<div class="card"><div class="cbody" style="justify-content:center"><b class="time">9:41 · Step 1 of 7</b><h2>Depart Shizuoka</h2><p>Hikari 640, ordinary car 13, seats 1D and 1E. About an hour to Tokyo.</p></div></div>
+<div class="card"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Shinkansen_platform_at_Tokyo_Station_22.jpg/960px-Shinkansen_platform_at_Tokyo_Station_22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" alt="Shinkansen platform at Tokyo Station"><div class="cbody"><b class="time">10:42 · Step 2 of 7</b><h2>Arrive Tokyo Station</h2><p>I'll be waiting on the platform, right at the door closest to your seats. Yuuki Ichihara, +81 (0)90-4494-1989.</p></div></div>
+<div class="card"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Mokuhankan_%2816200105176%29_%282%29.jpg/960px-Mokuhankan_%2816200105176%29_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" alt="Print workshop demonstration" loading="lazy"><div class="cbody"><b class="time">11:30 · Step 3 of 7</b><h2>FLAT LABO, Ginza</h2><p>Museum-quality print showroom and live demo. 2-16-7 Ginza, Shochiku Bldg · 03-6264-7718. About an hour.</p></div></div>
+<div class="card"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Tendon_of_Ten%27ya.jpg/960px-Tendon_of_Ten%27ya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" alt="Tempura rice bowl" loading="lazy"><div class="cbody"><b class="time">Midday · Step 4 of 7</b><h2>Lunch</h2><p>One of five picks nearby, decided on the day.</p></div></div>
+<div class="card"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Kappabashi_Street_with_Tokyo_Skytree_in_Background%2C_Tokyo_130810_1.jpg/960px-Kappabashi_Street_with_Tokyo_Skytree_in_Background%2C_Tokyo_130810_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" alt="Kappabashi kitchenware street" loading="lazy"><div class="cbody"><b class="time">Afternoon · Step 5 of 7</b><h2>Kappabashi</h2><p>Kitchenware street — knives, ceramics, and the realistic food replicas restaurants use.</p></div></div>
+<div class="card"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Yanaka_Ginza_2.jpg/960px-Yanaka_Ginza_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" alt="Yanaka Ginza shopping street" loading="lazy"><div class="cbody"><b class="time">Late aft. · Step 6 of 7</b><h2>Yanesen</h2><p>Yanaka, Nezu, Sendagi — old wooden lanes and Yanaka Ginza's street food.</p></div></div>
+<div class="card"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/On_the_way_to_Sunshine_City_%E3%82%B5%E3%83%B3%E3%82%B7%E3%83%A3%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%86%E3%82%A3_in_Ikebukuro%2C_Tokyo%2C_Japan_%2826295481219%29.jpg/960px-On_the_way_to_Sunshine_City_%E3%82%B5%E3%83%B3%E3%82%B7%E3%83%A3%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%86%E3%82%A3_in_Ikebukuro%2C_Tokyo%2C_Japan_%2826295481219%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" alt="Walkway to Sunshine City" loading="lazy"><div class="cbody"><b class="time">16:30 · Step 7 of 7</b><h2>Sunshine City Prince Hotel</h2><p>Check-in help, then the guided day ends. Your suitcase is already there.</p><p class="n">— end —</p></div></div>
 </div>
 <div class="dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 <p class="hint">← swipe through the day →</p>
