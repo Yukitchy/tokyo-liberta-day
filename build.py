@@ -118,7 +118,7 @@ HERO_CSS = """
 .slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 1.1s ease,transform 5s linear}
 .slides img.on{opacity:1;transform:scale(1)}
 .slides:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 30%,rgba(0,0,0,.74))}
-.hcap{position:relative;z-index:1;min-height:62vh;max-height:600px;display:flex;flex-direction:column;justify-content:flex-end;padding-top:48px;padding-bottom:22px}
+.hcap{position:relative;z-index:1;min-height:40vh;max-height:390px;display:flex;flex-direction:column;justify-content:flex-end;padding-top:48px;padding-bottom:22px}
 .hcap .kicker{color:#9ee3b8}
 .hcap h1{color:#fff;margin:0 0 14px;text-shadow:0 2px 14px rgba(0,0,0,.3)}
 .snav{display:flex;align-items:center;gap:10px}
@@ -128,6 +128,27 @@ HERO_CSS = """
 .dots button.on{background:#fff}
 .hbody{padding-top:22px;padding-bottom:26px}
 @media(prefers-reduced-motion:reduce){.slides img{transition:none;transform:none}}
+"""
+NAV_CSS = """
+[id]{scroll-margin-top:64px}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,253,246,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.tb-in{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.tb-label{font-size:13px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.menu{position:relative;flex:none;margin-left:12px}
+.menu summary{list-style:none;cursor:pointer;font-size:18px;line-height:1;padding:6px 10px;border-radius:6px;color:var(--ink)}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{background:var(--line)}
+.menu-list{position:absolute;right:0;top:calc(100% + 8px);background:var(--card);border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.1);padding:6px;display:flex;flex-direction:column;min-width:190px}
+.menu-list a{padding:9px 12px;border-radius:6px;font-size:14px;color:var(--ink);text-decoration:none}
+.menu-list a:hover{background:var(--bg)}
+.fold{border:1px solid var(--line);border-radius:8px;background:var(--card);margin:0 0 26px}
+.fold>summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 18px;font-weight:600;font-size:15px}
+.fold>summary::-webkit-details-marker{display:none}
+.fold>summary::after{content:"+";font-weight:400;font-size:19px;color:var(--mute)}
+.fold[open]>summary{border-bottom:1px solid var(--line)}
+.fold[open]>summary::after{content:"\\2212"}
+.fold-body{padding:18px}
+.fold-body>.eats,.fold-body>.photos{margin-bottom:0}
 """
 HERO_JS = """
  (function(){
@@ -147,7 +168,7 @@ page = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{{--bg:#fffdf6;--card:#fff;--ink:#111;--mute:#767065;--line:#eae4d6;--acc:#1a5c3a;--r:10px}}
-*{{box-sizing:border-box;min-width:0}} html,body{{overflow-x:hidden;max-width:100%}} img{{max-width:100%}}
+*{{box-sizing:border-box;min-width:0}} html{{overflow-x:hidden;max-width:100%}} body{{max-width:100%}} img{{max-width:100%}}
 body{{margin:0;font-family:Inter,-apple-system,"Hiragino Sans",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}}
 .wrap{{max-width:1080px;margin:0 auto;padding:0 20px}}
 .kicker{{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin:0 0 10px}}
@@ -156,6 +177,7 @@ h1{{font-weight:800;font-size:clamp(34px,5.4vw,54px);line-height:1.06;letter-spa
 h2{{font-weight:800;font-size:clamp(30px,4.2vw,42px);line-height:1.06;letter-spacing:-.025em;margin:0}}
 h3{{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin:0 0 12px}}
 {HERO_CSS}
+{NAV_CSS}
 header p{{font-size:18px;color:var(--mute);margin:0;max-width:620px}}
 .facts{{display:flex;flex-wrap:wrap;gap:6px 20px;margin:20px 0 0;padding:0;list-style:none;font-size:14px;color:var(--mute)}} .facts b{{color:var(--ink);font-weight:600}}
 .sechead{{display:flex;align-items:baseline;gap:14px;padding:26px 0 16px;border-top:1px solid var(--line)}}
@@ -191,7 +213,7 @@ footer.wrap{{padding:26px 20px 60px;font-size:13px;color:var(--mute);border-top:
 }}
 @media(max-width:560px){{
  .wrap{{padding:0 18px}}
- .hcap{{min-height:58vh;padding-bottom:18px}} .hbody{{padding-top:18px;padding-bottom:22px}} .kicker{{margin-bottom:12px}}
+ .hcap{{min-height:38vh;padding-bottom:18px}} .hbody{{padding-top:18px;padding-bottom:22px}} .kicker{{margin-bottom:12px}}
  h1{{font-size:33px;line-height:1.08;letter-spacing:-.03em;margin-bottom:14px}}
  header p{{font-size:16px;line-height:1.55;max-width:none}}
  .facts{{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin-top:16px;font-size:13px;line-height:1.5}}
@@ -209,6 +231,16 @@ footer.wrap{{padding:26px 20px 60px;font-size:13px;color:var(--mute);border-top:
  footer.wrap{{padding:20px 18px 44px;font-size:11.5px;line-height:1.55}}
 }}
 </style></head><body>
+<nav class="topbar"><div class="wrap tb-in">
+<span class="tb-label">Sep 11 &middot; {DAY['group']}</span>
+<details class="menu"><summary aria-label="Menu">&#9776;</summary>
+<div class="menu-list">
+<a href="#day">The day</a>
+<a href="#pay">What you&rsquo;ll pay</a>
+<a href="#eat">Where we eat</a>
+<a href="#akiba">Akihabara</a>
+</div></details>
+</div></nav>
 <header class="hero">
 <div class="hpic"><div class="slides">{''.join(f'<img src="{x["thumb"]}" alt="{html.escape(x["label"])}" data-name="{html.escape(x["label"])}">' for x in PH['hero'])}</div>
 <div class="wrap hcap">
@@ -222,17 +254,20 @@ footer.wrap{{padding:26px 20px 60px;font-size:13px;color:var(--mute);border-top:
 </div>
 </header>
 <div class="wrap">
-<div class="sechead"><span class="n">1</span><div><b>The day</b> <span>Hour by hour, start to finish.</span></div></div>
+<div class="sechead" id="day"><span class="n">1</span><div><b>The day</b> <span>Hour by hour, start to finish.</span></div></div>
 <div class="photos">{photos_block(PH['steps'])}</div>
 <ol class="steps">{steps_block(DAY['steps'])}</ol>
-<h3>Where we eat</h3><div class="eats">{eats_block(DAY['food'], PH['food'])}</div>
+<details class="fold" id="eat"><summary>Five lunch ideas</summary><div class="fold-body">
+<div class="eats">{eats_block(DAY['food'], PH['food'])}</div>
+</div></details>
 <div class="notes"><p><b>Good for</b> {html.escape(DAY['good'])}</p><p><b>Keep in mind</b> {html.escape(DAY['mind'])}</p></div>
 <p class="links">{links_block(DAY['links'])}</p>
-<div class="sechead"><span class="n">2</span><div><b>What you&rsquo;ll pay today</b> <span>Everything else is already arranged.</span></div></div>
+<div class="sechead" id="pay"><span class="n">2</span><div><b>What you&rsquo;ll pay today</b> <span>Everything else is already arranged.</span></div></div>
 <ul class="costs">{costs_block(DAY['costs'])}</ul>
 <div class="sechead"><span class="n">3</span><div><b>Getting around</b> <span>How the day connects, stop to stop.</span></div></div>
 <div class="mapbox"><iframe src="{route_emb(DAY['stops'])}" loading="lazy" title="Route for the day" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
 <p class="moves">{DAY['moves']} <a href="{route_link(DAY['stops'])}" target="_blank" rel="noopener">Open the route in Google Maps ↗</a></p>
+<details class="fold" id="akiba"><summary>More: an Akihabara anime day</summary><div class="fold-body">
 <div class="sechead"><span class="n">4</span><div><b>Not part of Friday</b> <span>A separate day, only if it interests you.</span></div></div>
 <p>Outside the plan above, I also run a private half-day anime tour around Akihabara, Tokyo&rsquo;s anime and electronics district. It isn&rsquo;t on Friday&rsquo;s schedule &mdash; just something worth knowing about if a second day in Tokyo ever fits your trip.</p>
 <ul style="margin:0 0 16px 20px;padding:0;font-size:15px;color:var(--mute)">{''.join(f'<li style="margin-bottom:6px">{x}</li>' for x in EXTRA['items'])}</ul>
@@ -240,6 +275,7 @@ footer.wrap{{padding:26px 20px 60px;font-size:13px;color:var(--mute);border-top:
 <div class="photos">{''.join(f'<img src="{src}" alt="{html.escape(alt)}" loading="lazy">' for src, alt in EXTRA['photos'])}</div>
 <p class="links"><a href="{EXTRA['ig']}" target="_blank" rel="noopener">See recent tours on Instagram ↗</a></p>
 <p>Interested, or just curious? Yuuki Ichihara, +81 (0)90-4494-1989, WhatsApp works too &mdash; same guide, same number as Friday.</p>
+</div></details>
 </div>
 <footer class="wrap"><p>Times are approximate and can move earlier or later on the day.</p>
 <details class="cred"><summary>Photo credits</summary><p>{credits}, via Wikimedia Commons.</p></details></footer>
