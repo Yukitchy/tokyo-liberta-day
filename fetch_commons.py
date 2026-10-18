@@ -51,13 +51,17 @@ TERMS = {
 
 if __name__ == '__main__':
     out = {}
+    try:
+        prev = json.load(open('commons.json'))
+    except (OSError, ValueError):
+        prev = {}
     for key, term in TERMS.items():
         try:
             out[key] = search(term)
             print(key, len(out[key]))
         except Exception as e:
-            print(key, 'FAILED', e)
-            out[key] = []
+            print(key, 'FAILED', e, '(keeping cached candidates)')
+            out[key] = prev.get(key, [])
         time.sleep(0.3)
     json.dump(out, open('commons.json', 'w'), ensure_ascii=False, indent=1)
     print('written commons.json')
